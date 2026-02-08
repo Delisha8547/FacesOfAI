@@ -14,15 +14,15 @@ const Dashboard: React.FC<DashboardProps> = ({ personas, onSelect, onNew }) => {
     <div className="p-8 h-full overflow-y-auto pb-20">
       <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2 font-heading tracking-tight">Encoded Neural Matrixes</h1>
-          <p className="text-slate-500 text-sm font-medium">You have authorized {personas.length} specialized vessels.</p>
+          <h1 className="text-3xl font-bold text-white mb-2 font-heading tracking-tight">Your Projects</h1>
+          <p className="text-slate-500 text-sm font-medium">You have developed {personas.length} specialized project.</p>
         </div>
         <button 
           onClick={onNew}
           className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center space-x-3 shadow-xl transition-all transform hover:scale-105"
         >
           <Icons.Plus />
-          <span>New Vessel</span>
+          <span>New Project</span>
         </button>
       </header>
 
@@ -31,15 +31,15 @@ const Dashboard: React.FC<DashboardProps> = ({ personas, onSelect, onNew }) => {
           <div className="w-20 h-20 bg-slate-800/50 rounded-3xl flex items-center justify-center mb-6 text-slate-700">
             <Icons.Bot />
           </div>
-          <h3 className="text-xl font-bold text-slate-300">No Vessels Authorized</h3>
+          <h3 className="text-xl font-bold text-slate-300">No Projects Authorized</h3>
           <p className="text-slate-500 mt-2 text-center max-w-sm px-6 text-sm leading-relaxed">
-            Authorized vessels start with zero knowledge. You must teach them every truth manually.
+            Authorized projects start with zero knowledge. You must teach them every truth manually.
           </p>
           <button 
             onClick={onNew}
             className="mt-8 text-indigo-400 hover:text-indigo-300 font-bold tracking-[0.2em] uppercase text-[10px]"
           >
-            Authorize First Vessel &rarr;
+            Lets Goooo &rarr;
           </button>
         </div>
       ) : (

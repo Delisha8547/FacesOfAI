@@ -50,10 +50,10 @@ const Creator: React.FC<CreatorProps> = ({ onComplete, onCancel }) => {
       <header className="mb-8 flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center space-x-2 font-heading">
-            <span>Manifest AI Vessel</span>
+            <span>Get Started !!</span>
             <span className="text-[10px] bg-indigo-600/20 text-indigo-400 px-2 py-0.5 rounded border border-indigo-500/30 uppercase tracking-tighter">Blank Slate</span>
           </h1>
-          <p className="text-slate-400 text-sm">Configure the base identity before neural training begins.</p>
+          <p className="text-slate-400 text-sm">Develop and deploy your ideas</p>
         </div>
         <button onClick={onCancel} className="text-slate-500 hover:text-slate-300 font-medium">Cancel</button>
       </header>
@@ -74,7 +74,7 @@ const Creator: React.FC<CreatorProps> = ({ onComplete, onCancel }) => {
         {step === 1 && (
           <div className="space-y-6">
             <div>
-              <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Matrix Designation</label>
+              <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Title</label>
               <input 
                 type="text" 
                 placeholder="e.g., ARCHIVE-ALPHA"
@@ -84,7 +84,7 @@ const Creator: React.FC<CreatorProps> = ({ onComplete, onCancel }) => {
               />
             </div>
             <div>
-              <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Functional Sector</label>
+              <label className="block text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Functional Role</label>
               <input 
                 type="text" 
                 placeholder="e.g., Regional Law Expert"
@@ -125,15 +125,15 @@ const Creator: React.FC<CreatorProps> = ({ onComplete, onCancel }) => {
                   onClick={() => setPersona({...persona, brainType: 'standard'})}
                   className={`p-6 rounded-2xl border cursor-pointer transition-all ${persona.brainType === 'standard' ? 'border-indigo-600 bg-indigo-600/10' : 'border-slate-800 bg-slate-950 hover:bg-slate-900'}`}
                 >
-                  <span className="text-white font-bold block mb-1">Standard Memory Bus</span>
-                  <p className="text-xs text-slate-500 font-medium">Optimized for fast ingestion and recall of taught facts.</p>
+                  <span className="text-white font-bold block mb-1">Fact Memory Module</span>
+                  <p className="text-xs text-slate-500 font-medium">Optimized for quick learning and effortless recall of taught information.</p>
                 </div>
                 <div 
                   onClick={() => setPersona({...persona, brainType: 'high-performance'})}
                   className={`p-6 rounded-2xl border cursor-pointer transition-all ${persona.brainType === 'high-performance' ? 'border-violet-600 bg-violet-600/10' : 'border-slate-800 bg-slate-950 hover:bg-slate-900'}`}
                 >
-                  <span className="text-white font-bold block mb-1">Advanced Synapse Cluster</span>
-                  <p className="text-xs text-slate-500 font-medium">Deeper reasoning for complex cross-linking of permanent truths.</p>
+                  <span className="text-white font-bold block mb-1">Reasoning Synapse Cluster</span>
+                  <p className="text-xs text-slate-500 font-medium">Enables deeper understanding by linking ideas and uncovering complex relationships.</p>
                 </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ const Creator: React.FC<CreatorProps> = ({ onComplete, onCancel }) => {
               onClick={finalize}
               className="bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-3 rounded-xl font-bold shadow-xl shadow-indigo-600/30 transition-all transform hover:scale-105"
             >
-              Initialize Empty Vessel
+              Develop
             </button>
           )}
         </div>

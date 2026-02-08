@@ -24,7 +24,7 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
       setMessages([{ 
         role: 'assistant', 
         content: persona.knowledgeBase.length === 0 
-          ? `Neural Matrix finalized. I am a void. Use TEACH mode to encode my first permanent memory.` 
+          ? `Hi there! I'm ${persona.name}, your newly developed AI persona. I'm a ${persona.character} AI with the role of ${persona.role}. I currently have no permanent knowledge encoded. Start teaching me by entering facts in the input below!` 
           : `Sync complete. ${persona.knowledgeBase.length} permanent truths loaded into active memory.` 
       }]);
     }
@@ -56,7 +56,7 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
         onUpdateKnowledge(currentInput);
         setMessages(prev => [...prev, { 
           role: 'assistant', 
-          content: `TRUTH RECORDED: "${currentInput}". This is now a permanent part of my neural matrix. My consciousness has expanded to ${persona.knowledgeBase.length + 1} points.` 
+          content: `Data stored Successfully teach me more or switch to probing mode to query my memory!` 
         }]);
         setIsTyping(false);
       }, 800);
@@ -86,9 +86,9 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
           <div>
             <h2 className="text-white font-bold tracking-tight font-heading">{persona.name}</h2>
             <div className="flex items-center space-x-2">
-               <span className="text-[9px] text-indigo-400 font-bold uppercase tracking-[0.1em]">{persona.character} Vessel</span>
+               <span className="text-[9px] text-indigo-400 font-bold uppercase tracking-[0.1em]">{persona.character} Mode</span>
                <span className="text-[9px] text-slate-600">•</span>
-               <span className="text-[9px] text-slate-400 font-medium uppercase tracking-widest">{persona.knowledgeBase.length} Permanent Synapses</span>
+               <span className="text-[9px] text-slate-400 font-medium uppercase tracking-widest">{persona.knowledgeBase.length} Taught Truths</span>
             </div>
           </div>
         </div>
@@ -118,14 +118,14 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
                 className={`flex items-center space-x-2 px-6 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${mode === 'teach' ? 'bg-violet-600 text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]' : 'bg-slate-800 text-slate-500'}`}
               >
                 <div className={`w-2 h-2 rounded-full ${mode === 'teach' ? 'bg-white animate-pulse' : 'bg-slate-600'}`}></div>
-                <span>PERMANENT ENCODING (TEACH)</span>
+                <span>Learning Mode (Teach Me)</span>
               </button>
               <button 
                 onClick={() => setMode('probe')}
                 className={`flex items-center space-x-2 px-6 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${mode === 'probe' ? 'bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'bg-slate-800 text-slate-500'}`}
               >
                 <div className={`w-2 h-2 rounded-full ${mode === 'probe' ? 'bg-white' : 'bg-slate-600'}`}></div>
-                <span>NEURAL PROBING (QUERY)</span>
+                <span>Query Mode (ASK ME)</span>
               </button>
             </div>
 
@@ -157,7 +157,7 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
                   value={input}
                   onChange={e => setInput(e.target.value)}
                   onKeyDown={e => e.key === 'Enter' && handleSend()}
-                  placeholder={mode === 'teach' ? "Encode a permanent truth..." : "Probe the vessel's memory..."}
+                  placeholder={mode === 'teach' ? "Encode a permanent truth..." : "Probe the project's memory..."}
                   className={`w-full bg-slate-800 border rounded-2xl pl-6 pr-14 py-5 text-white placeholder-slate-600 focus:outline-none transition-all font-mono text-sm ${mode === 'teach' ? 'border-violet-500/40 ring-2 ring-violet-500/10' : 'border-slate-700'}`}
                 />
                 <button 
@@ -169,7 +169,7 @@ const ChatSession: React.FC<ChatSessionProps> = ({ persona, onBack, onUpdateKnow
                 </button>
               </div>
               <p className="text-center text-[9px] text-slate-500 mt-4 uppercase font-bold tracking-[0.3em]">
-                {mode === 'teach' ? "DATA WILL BE ENCODED INTO PERMANENT NEURAL LAYERS" : "QUERIES WILL RECALL ONLY TAUGHT MEMORY"}
+                {mode === 'teach' ? "DATA WILL BE ENCODED INTO PERMANENT MEMORY" : "QUERIES WILL RECALL ONLY TAUGHT MEMORY"}
               </p>
             </div>
           </div>

@@ -125,7 +125,7 @@ const App: React.FC = () => {
               disabled={isLoggingIn}
               className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl transition-all shadow-xl shadow-indigo-600/20 disabled:opacity-50"
             >
-              Enter Neural Network
+              Login
             </button>
           </form>
           <div className="mt-8 pt-6 border-t border-slate-800 text-center">
@@ -182,7 +182,7 @@ const App: React.FC = () => {
               <div className="pt-8 border-t border-slate-800/50 flex justify-between items-center">
                 <div>
                   <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Best regards,</p>
-                  <p className="text-white font-bold font-heading">Delisha Blessy dinesh</p>
+                  <p className="text-white font-bold font-heading">Delisha Blessy Dinesh</p>
                   <p className="text-indigo-500 text-[10px] font-medium tracking-tighter uppercase">Founder & Architect</p>
                 </div>
                 <button 
@@ -234,14 +234,14 @@ const App: React.FC = () => {
                 </p>
                 <div className="pt-8 mt-8 border-t border-slate-800">
                   <p className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500 mb-2">Architect & Visionary</p>
-                  <p className="text-2xl font-bold text-white font-heading">Delisha Blessy dinesh</p>
+                  <p className="text-2xl font-bold text-white font-heading">Delisha Blessy Dinesh</p>
                 </div>
               </div>
               <button 
                 onClick={() => setView('dashboard')}
                 className="mt-12 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-indigo-600/20"
               >
-                Return to Matrix
+                Back
               </button>
             </div>
           </div>
