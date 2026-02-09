@@ -33,3 +33,10 @@
 git clone https://github.com/Delisha8547/FacesOfAI.git
 cd FacesOfAI
 
+## Usage
+
+- Open VS Code and navigate to the project folder.
+- Start the server (python app.py) to launch the AI interface.
+- Enter your input to train your AI “baby” model.
+- Interact with your model to see how it learns and responds.
+- Deploy your trained model via the generated API endpoint.
